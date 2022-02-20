@@ -1,9 +1,13 @@
 package com.example.mycalculator
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
-import java.lang.Exception
+import android.text.method.ScrollingMovementMethod
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.math.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -99,11 +103,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        percent.setOnClickListener {
-            formula.text = "${formula.text}%"
+        pi.setOnClickListener {
+            formula.text = "${formula.text}${PI}"
+            nStr += "${PI}"
         }
-        sign.setOnClickListener {
-
+        epsilon.setOnClickListener {
+            formula.text = "${formula.text}${E}"
+            nStr += "${E}"
         }
 
         clear.setOnClickListener {
@@ -126,6 +132,7 @@ class MainActivity : AppCompatActivity() {
             oList.clear()
         }
     }
+
 
         fun addList(str : String, ope : Char){
             try{
